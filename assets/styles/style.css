@@ -1,130 +1,55 @@
-body ,h1,h2 ,p {
+body {
 	margin: 0;
 	font-family: "Trebuchet MS";
+	background-color:#f4f4f4;
 }
 
 * {
-	transition: .4s;
 	box-sizing: border-box;
 }
 
-body {
-	background-color: #FFDE34;
-}
-
-.item {
-	position: relative;
-	margin-bottom: 10px;
-	padding: 20px 10px;
- 	background-color: #f4f4f4;
-}
-.item:after {
-	display: table;
-	content: "";
-	clear: both;
-}
-
-.item-title {
-	font-weight: 900;
-	font-size: 26px;
-	display: inline-block;
-}
-
-.item-desc {
+.hero {
 	position: absolute;
-	bottom: 20px;
-	left: 10px;
-	color: #c63d0b;
-	font-weight: 900;
+	margin: 0;
+	top: 0px;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 400px;
+	opacity: 1;
+	transition: .3s;
 }
 
-.item img {
-	width: 25%;
-	float: right;
-}
-
-.container {
-	width: 100%;
-}
-
-.section-title {
-	padding:50px 10px 0 ;
-}
-
-.section-content {
-	height: 80vh;
-	overflow-y:scroll; 
-}
-
-h1 {
-	margin-bottom: 10px;
-	font-size: 26px;
-	line-height: 1.2;
-}
-
-h2 {
-	margin-bottom: 10px;
-	font-size: 18px;
-	line-height: 1.2;
-}
-
-@media screen and (min-width: 425px) {
-	.item-title {
-		font-size: 44px;
-	}
-	.item-desc {
-		font-size: 20px;
-	}
-}
-
-@media screen and (min-width: 500px) {
-	h1 {
-		font-size: 50px;
-		margin-bottom: 20px;
-	}
-	h2 {
-		font-size: 25px;
-		margin-bottom: 20px;
-	}
-}
-
-@media screen and (min-width: 720px) {
-	.container {
-		width: 768px;
-		margin: 0 auto;
-	}
-}
-.decor {
-	position: fixed;
-	width: 200px;
-	height: 200px;
-	border-radius: 50%;
-	background: #f4f4f4;
-}
-
-.decor1 {
-	right: -200px;
-	bottom:-200px;
-}
-.decor2 {
-	right: -200px;
-	bottom:300px;
-}
-.decor3 {
-	right: -200px;
-	bottom:100px;
+.hero.-invisible {
+	opacity: 0;
 }
 
 
-@media screen and (min-width: 1020px) {
-	.decor1 {
-	left: -150px;
-	bottom: -150px;
-	}
-	.decor3 {
-	left: -50px;
-	}
-	.decor2 {
-	right: -150px;
-	}
+.control-panel {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	width: 500px;
+	min-height: 250px;
+	background-color: #565656;
+	border: 4px solid black;
+	border-radius: 20px;
+	padding: 20px;
+}
+
+.bubble {
+	position: absolute;
+	opacity: 0;
+	right: -140px;
+	top: 30px;
+	background-color: white;
+	border-radius: 50px 50px 50px 0;
+	min-width: 200px;
+	min-height: 60px;
+	padding: 20px;
+}
+
+.bubble.-visible{
+	opacity: 1;
+	transition: .3s;
 }
