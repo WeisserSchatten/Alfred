@@ -1,11 +1,15 @@
 $(document).ready(function() {
-
-	var heroSpeech = 'Остался вместе с былой славой DS';
-
-	$('.js-showHide').click(function() {
-		$('.hero').toggleClass('-invisible')
+	$(".js-sayThat").click(function () {
+		showBubble($('.js-text1').val() + $('.js-text2').val())
 	});
-	$('.js-hello').click(function() {
-		$('.bubble').addClass('-visible').text(heroSpeech);
-	});	
+
+	function showBubble(text) {
+		$(".bubble").text(text);
+		$(".bubble").addClass('-visible');
+
+		setTimeout(function (){
+			$('.bubble').removeClass('-visible')
+		}, 2000);
+	}
+	
 });

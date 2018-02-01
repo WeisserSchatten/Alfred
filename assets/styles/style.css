@@ -47,9 +47,36 @@ body {
 	min-width: 200px;
 	min-height: 60px;
 	padding: 20px;
+	transition: .3s;
 }
 
 .bubble.-visible{
 	opacity: 1;
-	transition: .3s;
+}
+
+input,
+button{
+	border-radius: 4px;
+	padding: 6px;
+	font-size: 14px;
+	font-weight: 900;
+	outline: none;
+	border: 0;
+}
+
+button{
+	background-color: white;
+	color: #4286f4;
+}
+
+button:active{
+	background-color: red;
+}
+
+button:hover{
+	background-color: #f4f4f4;
+}
+
+.js-sayThat{
+	margin: 10px;
 }
