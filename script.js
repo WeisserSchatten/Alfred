@@ -1,22 +1,30 @@
 $(document).ready(function() {
 	$(".js-plus").click(function () {
-		showBubble(Number(getFirstWord()) + Number(getSecondWord()));
+		if (checkInputData().isNumber) {
+			showBubble(Number(getFirstWord()) + Number(getSecondWord()));	
+		} else {
+			showNotNumericData()
+		}
 	});
 	$(".js-minus").click(function () {
-		showBubble(Number(getFirstWord()) - Number(getSecondWord()));
+		if (checkInputData().isNumber) {
+			showBubble(Number(getFirstWord()) - Number(getSecondWord()));	
+		} else {
+			showNotNumericData()
+		}
 	});
 	$(".js-multiply").click(function () {
-		showBubble(Number(getFirstWord()) * Number(getSecondWord()));
+		if (checkInputData().isNumber) {
+			showBubble(Number(getFirstWord()) * Number(getSecondWord()));	
+		} else {
+			showNotNumericData()
+		}
 	});
 	$(".js-divide").click(function() {
 		if (checkInputData().isNumber) {
 			showBubble(Number(getFirstWord()) / Number(getSecondWord()));	
 		} else {
-			if (checkInputData().isEmty) {
-				showBubble('Пустышка');
-			} else {
-				showBubble(getFirstWord() + ' ' + getSecondWord());
-			}
+			showNotNumericData()
 		}
 	});
 
@@ -24,11 +32,15 @@ $(document).ready(function() {
 	// =================================================
 	// =================================================
 
-	function checkInputData() {
-		// если введено значение в цифрах то идет продожение функции
-		// если переменная имеет буквенное значение мы выводим надпись
-		// если значение равно нулю то опять же выводим надпись
+	function showNotNumericData() {
+			if (getFirstWord() === '' || getSecondWord() === ''){
+				showBubble('Пустышка');
+			}  else {
+				showBubble(getFirstWord() + ' ' + getSecondWord());
+			}
+	}
 
+	function checkInputData() {
 		if ($.isNumeric(getFirstWord()) && $.isNumeric(getSecondWord())) {
 			return {
 				isNumber: true
