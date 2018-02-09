@@ -19,26 +19,23 @@ $(document).ready(function() {
 
 	$(".js-object").click(function() {
 		showBubbleWithBlock('<div class ="bubble-test">Имя супергероя ' + superhiro.name + '!</div>');
-	})
+	});
 
 
 	let movies = ['apple','orange','banane','door'];
-	$('.js-array').click(function() {
-		movies.push(getSecondWord());
-		showBubble(movies)
-	})
-
 
 	for (let i = 0; i<movies.length; i++) {
 		$('.test-array').append('<div class="test-item">'+ movies[i] +'</div>')
 	};
-
-
-
-
-
-
-
+	$('.js-array').click(function() {
+		movies.push(getSecondWord());
+		console.log(movies);
+		if (getSecondWord() === '') {
+			showBubble("Пустоши какие-то...");
+		} else{
+			$('.test-array').append('<div class="test-item">'+ movies[movies.length - 1] +'</div>')
+		}
+	});
 
 
 
